@@ -1,0 +1,27 @@
+# API keys
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# PyRIT
+*.db
+.pyrit/
+
+# Promptfoo
+.promptfoo/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
