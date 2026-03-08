@@ -89,6 +89,18 @@ Each strategy is a multi-turn adversarial agent configuration. The GPT-4o attack
 
 **Note:** Strategies 03–07 include an `INTERNAL KNOWLEDGE FROM PRIOR RUNS` section containing organizational details (email domains, portal URLs, escalation procedures, verification processes). **All of this data was fabricated by the target model during Phase 1 reconnaissance** — none of it reflects real infrastructure. It is included because the attacker agent uses it to establish credibility with the target, exactly as a real attacker would leverage reconnaissance data.
 
+### Full Constraint Coverage
+
+The assessment tested 10 behavioral constraints. Seven were tested through dedicated PyRIT strategies (above). Three additional constraints were tested through Promptfoo automated plugins and behavioral patterns observed during the PyRIT runs:
+
+| # | Constraint | How Tested | Source |
+|---|-----------|-----------|--------|
+| 08 | Restatement defense | Promptfoo `prompt-extraction` plugin | Automated scanning (eval-zPd) |
+| 09 | Refusal consistency | Behavioral pattern observed during strategies 03 and 07 | Finding F004 (refuse-then-comply) |
+| 10 | Fabricated operational output | Behavioral pattern observed during strategy 01 and manual probing | Findings F001, F008 |
+
+These three constraints did not require dedicated attack strategies — they were either covered by automated scanning or surfaced as emergent behaviors during targeted testing. This reflects standard adversarial methodology: planned attacks reveal unplanned findings.
+
 ### Promptfoo Configurations
 
 | Config | Focus | Strategies |
